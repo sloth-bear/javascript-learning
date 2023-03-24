@@ -266,10 +266,13 @@
                         acc[value] = 1;
                     }
                     return acc;
-                }, {})
+                }, {});
 
             const max = Object.keys(result).reduce((acc, curr) => {
-                return acc > result[curr] ? acc : curr;
+                if (!acc) {
+                    acc = curr;
+                }
+                return result[acc] > result[curr] ? acc : curr;
             }, '');
 
             const resultHeader = document.createElement('p');
