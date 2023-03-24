@@ -8,9 +8,10 @@
 </head>
 <body>
     <header data-html="./header.html"></header>
+    <div id="questions"></div>
+
     <button onclick="confirm()">결과 확인하기</button>
     <div id="result"></div>
-    <div id="questions"></div>
 
     <script type="module" src="./html.js"></script>
     <script>
@@ -284,6 +285,8 @@
             const resultWrapper = document.querySelector('#result');
             resultWrapper.appendChild(resultHeader);
             resultWrapper.appendChild(resultP);
+
+            window.scrollTo(0, document.body.scrollHeight);
         };
     </script>
     <style>
